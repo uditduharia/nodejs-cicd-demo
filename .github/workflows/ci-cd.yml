@@ -6,26 +6,23 @@ on:
       - main
 
 jobs:
-  build-test-deploy:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install Dependencies
+      - name: Install
         run: npm install
 
-      - name: Run Tests
+      - name: Test
         run: npm test
 
-      - name: Build Docker Image
+      - name: Build Docker
         run: docker build -t cicd-demo .
-
-      - name: Deployment Simulation
-        run: echo "Application deployed successfully 🚀"
