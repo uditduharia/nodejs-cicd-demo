@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Updated Version 🚀");
+  res.send("CI/CD Pipeline Working 🚀");
 });
 
 if (require.main === module) {
