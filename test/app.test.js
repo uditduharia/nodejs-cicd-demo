@@ -6,6 +6,8 @@ describe("GET /", () => {
 
     const res = await request(app).get("/");
 
+    console.log(res.text); // debug (temporary)
+
     expect(res.statusCode).toBe(200);
     expect(res.text).toBe("CI/CD Pipeline Working 🚀");
 
